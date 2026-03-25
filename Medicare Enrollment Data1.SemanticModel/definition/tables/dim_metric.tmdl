@@ -1,0 +1,29 @@
+table dim_metric
+	lineageTag: 73d87518-7a20-4d83-a656-0d69bbccd468
+
+	column Metric_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: d4fa95ee-b09e-46c4-bc91-89e32229dab9
+		summarizeBy: none
+		sourceColumn: Metric_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Metric_Name
+		dataType: string
+		lineageTag: 07fee969-dfc5-40f8-9835-c3ad0ab7d16a
+		summarizeBy: none
+		sourceColumn: Metric_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_metric = m
+		mode: import
+		source =
+				let
+				  Source = Sql.Database("7gbtdsbe2gkujavjyktq5asify-7puqmoyhwgwerhvzx66b4tuj5q.datawarehouse.fabric.microsoft.com", "silver"),
+				  #"Navigation 1" = Source{[Schema = "dbo", Item = "dim_metric"]}[Data]
+				in
+				  #"Navigation 1"
+

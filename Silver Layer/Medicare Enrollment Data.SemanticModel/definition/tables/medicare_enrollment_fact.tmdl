@@ -1,0 +1,58 @@
+table medicare_enrollment_fact
+	lineageTag: 387c9014-d8d6-413c-9dcc-9e565c0cd9d0
+	sourceLineageTag: [dbo].[medicare_enrollment_fact]
+
+	column state_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 6b822f5c-66c2-4d98-a466-00b67207afe0
+		sourceLineageTag: state_id
+		summarizeBy: sum
+		sourceColumn: state_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 1ce0b196-a43d-473e-b6c9-d03eb31fea9d
+		sourceLineageTag: Year
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Metric_ID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 6abf456b-21ce-4718-b377-4a7118265ff9
+		sourceLineageTag: Metric_ID
+		summarizeBy: count
+		sourceColumn: Metric_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 31067621-9384-4136-9110-f63f8bcab4a9
+		sourceLineageTag: Value
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition medicare_enrollment_fact = entity
+		mode: directLake
+		source
+			entityName: medicare_enrollment_fact
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

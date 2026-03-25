@@ -1,0 +1,34 @@
+table dim_state
+	lineageTag: 62def804-7606-4a5a-a245-360d2f5f2fcd
+	sourceLineageTag: [dbo].[dim_state]
+
+	column State_ID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1eee47e7-ccec-426b-9d17-b3eba735e9da
+		sourceLineageTag: State_ID
+		summarizeBy: count
+		sourceColumn: State_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area_of_Residence
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a1c49a02-561b-4013-92d7-8dbbde6e60ee
+		sourceLineageTag: Area_of_Residence
+		summarizeBy: none
+		sourceColumn: Area_of_Residence
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_state = entity
+		mode: directLake
+		source
+			entityName: dim_state
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

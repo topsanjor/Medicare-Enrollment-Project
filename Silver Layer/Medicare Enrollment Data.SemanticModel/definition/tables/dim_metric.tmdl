@@ -1,0 +1,34 @@
+table dim_metric
+	lineageTag: 9af6a051-c582-4856-9d12-d3fa6e8dd83c
+	sourceLineageTag: [dbo].[dim_metric]
+
+	column Metric_ID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 6cfe50cb-be5b-4312-a1b7-3ee9a790f404
+		sourceLineageTag: Metric_ID
+		summarizeBy: count
+		sourceColumn: Metric_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Metric_Name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 23cb0344-de14-48ac-b85e-24bf280952a5
+		sourceLineageTag: Metric_Name
+		summarizeBy: none
+		sourceColumn: Metric_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_metric = entity
+		mode: directLake
+		source
+			entityName: dim_metric
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

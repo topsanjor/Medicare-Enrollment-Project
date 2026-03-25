@@ -1,0 +1,8 @@
+relationship dcd58c34-dd2a-eb3c-bb99-a7ea96e747b9
+	fromColumn: medicare_enrollment_fact.Metric_ID
+	toColumn: dim_metric.Metric_ID
+
+relationship 583f3fb7-fa6e-7254-5094-8c13d11c6ac9
+	fromColumn: medicare_enrollment_fact.state_id
+	toColumn: dim_state.State_ID
+

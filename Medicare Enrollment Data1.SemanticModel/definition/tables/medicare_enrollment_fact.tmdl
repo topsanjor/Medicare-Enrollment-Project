@@ -1,0 +1,49 @@
+table medicare_enrollment_fact
+	lineageTag: 1491a555-37a5-4952-834e-023c68bed793
+
+	column state_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 5bdb9d2e-5b71-4549-b44f-693f8a8b99f3
+		summarizeBy: none
+		sourceColumn: state_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 36616bef-0c5e-4084-909e-19c6ecbd0ec8
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Metric_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: d0709940-9021-4dde-8df1-4f4e2dacf4c3
+		summarizeBy: none
+		sourceColumn: Metric_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: double
+		lineageTag: 0d4911f7-38e7-4ec9-aad5-2a3a3d471b56
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition medicare_enrollment_fact = m
+		mode: import
+		source =
+				let
+				  Source = Sql.Database("7gbtdsbe2gkujavjyktq5asify-7puqmoyhwgwerhvzx66b4tuj5q.datawarehouse.fabric.microsoft.com", "silver"),
+				  #"Navigation 1" = Source{[Schema = "dbo", Item = "medicare_enrollment_fact"]}[Data]
+				in
+				  #"Navigation 1"
+

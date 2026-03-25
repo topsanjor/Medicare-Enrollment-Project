@@ -1,0 +1,130 @@
+{
+  "config": "{\"version\":\"5.70\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY26SU02\",\"version\":{\"visual\":\"2.6.0\",\"report\":\"3.1.0\",\"page\":\"2.3.0\"},\"type\":2}},\"activeSectionIndex\":2,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "filters": "[]",
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "789bfd3169c5e32073e0",
+      "config": "{}",
+      "name": "f8d30cfd029b98c3a003"
+    }
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY26SU02",
+            "path": "BaseThemes/CY26SU02.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "27ac9d0d1a24b9d079d3",
+      "ordinal": 3,
+      "visualContainers": [],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 3",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "6c684af39e31d3e2a018",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"37d96950e0754d3124ea\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.930178432893715,\"y\":0,\"z\":0,\"width\":1263.1186966640805,\"height\":689.1543832428239,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Columns\":[{\"queryRef\":\"medicare_enrollment_fact.Year\",\"active\":true}],\"Values\":[{\"queryRef\":\"Sum(medicare_enrollment_fact.Value)\"}],\"Rows\":[{\"queryRef\":\"dim_state.Area_of_Residence\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"medicare_enrollment_fact\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_state\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Value\"}},\"Function\":0},\"Name\":\"Sum(medicare_enrollment_fact.Value)\",\"NativeReferenceName\":\"Sum of Value\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Year\"},\"Name\":\"medicare_enrollment_fact.Year\",\"NativeReferenceName\":\"Year\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Area_of_Residence\"},\"Name\":\"dim_state.Area_of_Residence\",\"NativeReferenceName\":\"Area_of_Residence\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[{\"name\":\"6b1b7985a895e0d87cd6\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_state\"}},\"Property\":\"Area_of_Residence\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_state\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Area_of_Residence\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'United States2'\"}}],[{\"Literal\":{\"Value\":\"'United States²'\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false},{\"name\":\"94a2ed030b2748a16ca4\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_metric\"}},\"Property\":\"Metric_Name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_metric\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Metric_Name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Total_Medicare_Enrollment'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 689.15,
+          "width": 1263.12,
+          "x": 9.93,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Total Enrollment by State",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"2d961a8954754a4ab1a0\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_metric\"}},\"Property\":\"Metric_Name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_metric\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Metric_Name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Total_Medicare_Enrollment'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+      "height": 720.00,
+      "name": "789bfd3169c5e32073e0",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1f02c34cb1aed6371a80\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1150.8579272477696,\"y\":72.91695264241594,\"z\":3,\"width\":121.23541523678793,\"height\":65.8888126286891,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"medicare_enrollment_fact.Year\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"medicare_enrollment_fact\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Year\"},\"Name\":\"medicare_enrollment_fact.Year\",\"NativeReferenceName\":\"Year\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"header\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"fontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'Segoe UI'\"}}},\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"9L\"}}},\"outlineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}}}}],\"selection\":[{\"properties\":{\"selectAllCheckboxEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"9L\"}}}}}],\"general\":[{\"properties\":{\"outlineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0}}}}}}}]},\"vcObjects\":{\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#A6ADC6'\"}}}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Custom'\"}}},\"shadowSpread\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}},\"shadowBlur\":{\"expr\":{\"Literal\":{\"Value\":\"5L\"}}},\"angle\":{\"expr\":{\"Literal\":{\"Value\":\"90L\"}}},\"shadowDistance\":{\"expr\":{\"Literal\":{\"Value\":\"4L\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"85L\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#E0E0E0'\"}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"4L\"}}}}}],\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"2L\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}},\"left\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}},\"right\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"general\":[{\"properties\":{\"keepLayerOrder\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}},\"howCreated\":\"Copilot\"}",
+          "filters": "[]",
+          "height": 65.89,
+          "width": 121.24,
+          "x": 1150.86,
+          "y": 72.92,
+          "z": 3.00
+        },
+        {
+          "config": "{\"name\":\"381ad1512d687d3d723c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":106.25290923196276,\"z\":0,\"width\":1280,\"height\":613.6850271528316,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineStackedColumnComboChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(medicare_enrollment_fact.Value)\"}],\"Category\":[{\"queryRef\":\"dim_state.Area_of_Residence\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"medicare_enrollment_fact\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_state\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Value\"}},\"Function\":0},\"Name\":\"Sum(medicare_enrollment_fact.Value)\",\"NativeReferenceName\":\"Sum of Value\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Area_of_Residence\"},\"Name\":\"dim_state.Area_of_Residence\",\"NativeReferenceName\":\"Area_of_Residence\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Value\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Yearly Medicare Enrollment by State'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'left'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"5eb5698aba0e52cacde5\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_state\"}},\"Property\":\"Area_of_Residence\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_state\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Area_of_Residence\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'United States2'\"}}],[{\"Literal\":{\"Value\":\"'United States²'\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 613.69,
+          "width": 1280.00,
+          "x": 0.00,
+          "y": 106.25,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"44f8ec27d029931eb7c2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":1}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 100.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1.00
+        },
+        {
+          "config": "{\"name\":\"8a0160fe8279b54e3b00\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":4,\"width\":1280,\"height\":50.954015099519566,\"tabOrder\":3}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Medicare Enrollment\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"20pt\",\"color\":\"#12239e\"}}],\"horizontalTextAlignment\":\"center\"}]}}]}}}",
+          "filters": "[]",
+          "height": 50.95,
+          "width": 1280.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 4.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"201L\"}}}}}]}}",
+      "displayName": "Total Medicare Enrollment by Year",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "8be769c50cc4a11817ba",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"67e0a1fe9621a0e7393c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":23.850931677018632,\"z\":0,\"width\":1270.062111801242,\"height\":640.9937888198757,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineClusteredColumnComboChart\",\"projections\":{\"Category\":[{\"queryRef\":\"medicare_enrollment_fact.Year\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(medicare_enrollment_fact.Value)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"medicare_enrollment_fact\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Year\"},\"Name\":\"medicare_enrollment_fact.Year\",\"NativeReferenceName\":\"Year\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Value\"}},\"Function\":0},\"Name\":\"Sum(medicare_enrollment_fact.Value)\",\"NativeReferenceName\":\"Sum of Value\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Value\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Yearly Enrollment'\"}}},\"fontFamily\":{\"expr\":{\"Literal\":{\"Value\":\"'Tahoma'\"}}},\"heading\":{\"expr\":{\"Literal\":{\"Value\":\"'Heading4'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'left'\"}}}}}]}}}",
+          "filters": "[{\"name\":\"b09497cbe6d14a2974a5\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_metric\"}},\"Property\":\"Metric_Name\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_metric\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Metric_Name\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Total_Medicare_Enrollment'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"isHiddenInViewMode\":false},{\"name\":\"4e3c10d83e5b600e161e\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_state\"}},\"Property\":\"Area_of_Residence\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_state\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Area_of_Residence\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'United States²'\"}}],[{\"Literal\":{\"Value\":\"'United States2'\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 640.99,
+          "width": 1270.06,
+          "x": 0.00,
+          "y": 23.85,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

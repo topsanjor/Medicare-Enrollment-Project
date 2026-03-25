@@ -1,0 +1,29 @@
+table dim_state
+	lineageTag: 4416e80c-1b4e-4e07-a439-a5677e688357
+
+	column State_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 49542ac0-7842-4cce-82e8-8a905d198c7a
+		summarizeBy: none
+		sourceColumn: State_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area_of_Residence
+		dataType: string
+		lineageTag: a4440ce6-dfa8-4505-ac11-938d6d71ea77
+		summarizeBy: none
+		sourceColumn: Area_of_Residence
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_state = m
+		mode: import
+		source =
+				let
+				  Source = Sql.Database("7gbtdsbe2gkujavjyktq5asify-7puqmoyhwgwerhvzx66b4tuj5q.datawarehouse.fabric.microsoft.com", "silver"),
+				  #"Navigation 1" = Source{[Schema = "dbo", Item = "dim_state"]}[Data]
+				in
+				  #"Navigation 1"
+
